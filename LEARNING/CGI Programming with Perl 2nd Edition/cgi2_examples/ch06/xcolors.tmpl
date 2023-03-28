@@ -1,0 +1,23 @@
+<HTML>
+
+<HEAD>
+  <TITLE>X11 Color Viewer</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="white">
+<DIV ALIGN="center">
+  <H1>X11 Color Viewer</H1>
+  <HR>
+  
+  <TABLE BORDER="1" CELLPADDING="4" WIDTH="400">
+    <TMPL_LOOP NAME="colors">
+      <TR>
+        <TD BGCOLOR="<TMPL_VAR NAME="rgb">">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+        <TD><TMPL_VAR NAME="name"></TD>
+      </TR>
+    </TMPL_LOOP>
+  </TABLE>
+</DIV>
+</BODY>
+</HTML>

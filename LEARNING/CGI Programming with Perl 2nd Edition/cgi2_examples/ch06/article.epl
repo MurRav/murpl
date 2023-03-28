@@ -1,0 +1,25 @@
+<HTML>
+
+[!
+  use lib "/usr/local/apache/lib-perl";
+  use News;
+!]
+
+[- ( $headline, $article, $date ) = News::get_story( $fdat{story} ) -]
+
+<HEAD>
+  <TITLE>[+ $headline +]</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="white">
+  <H2>[+ $headline +]</H2>
+
+  <P><I>[+ $date +]</I></P>
+
+  [+ local $escmode = 0; $article +]
+  
+  <HR>
+  <P>Return to <A HREF="news.epl">What's New</A>.</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><link rel="stylesheet" type="text/css" href="flow0001.css" />
+<title>part0011</title>
+</head>
+<body>
+<div id="a1PP" class="heading_sA5">Ingress</div>
+<div class="class_s46">Glossary</div>
+<div>For clarity, this information defines the following terms:</div>
+<div class="class_s2Y">Node</div>
+<div>The phase of a cluster, an employee computing device in Kubernetes.</div>
+<div>group</div>
+<div>A set of nodes running managed containers via Kubernetes. For this example, and often in Kubernetes deployments, the nodes in the cluster are no longer a section of the public Internet.</div>
+<div>Edge router</div>
+<div>A router that implements a firewall policy for your cluster. This can be a gateway managed through a cloud provider or a physical piece of hardware.</div>
+<div>Cluster neck</div>
+<div>A set of links, logical or physical, that facilitate communication inside a cluster according to the Kubernetes networking model.</div>
+<div>Service</div>
+<div>Kubernetes service that identifies a set of pods using label selectors. Unless otherwise quoted, services are assumed to be fully regularized to digital IPs within a cluster work.</div>
+<div>What is ingress?</div>
+<div>The Congress exposes HTTP and HTTPS routes to backyard clusters for services inside the cluster. Traffic routing is managed through the rules described in the ingratiation resource.</div>
+<div class="class_s1GX">Internet</div>
+<div class="class_s1GZ">|</div>
+<div class="class_s46">[enter]</div>
+<div class="class_s46">- | ----- | -</div>
+<div>[services]</div>
+<div>An Ingrid can be configured to provide services based on externally available URLs, load balancing traffic, eliminating SSL / TLS, and completely virtual hosting. An ingrate controller is usually accountable for grating the grade with a load balancer, although it can also configure your side router or additional front to help handle the traffic.</div>
+<div id="page_104" class="class_s2V">Innovation no longer exposes arbitrary ports or protocols. A service of the type is commonly used to bring services apart from HTTP and HTTPS to the net. Type = NodePort or Service.Type = LoadBalancer.</div>
+<div class="class_s2Y">Prerequisites</div>
+<div>You need an Ingress Controller to complete an Ingress. There is no effect of developing only an Ingress aid.</div>
+<div class="class_s2V">You may need to install an Ingred controller such as Ingress-Nginx. You can choose from several types of ingredients controllers.</div>
+<div class="class_s2V">Ideally, all Ingress controllers should be sized to the reference specification. In reality, many ingredient controllers operate in a barely different way.</div>
+<div class="class_s2V">Note: Make sure that you have evaluated your selection controller's document to identify the time of choosing it.</div>
+<div>The degradation resource</div>
+<div>A Minimum Ingred Help Example:</div>
+<div class="class_s2V">apiVersion: nerking.k8s.io/v1beta1</div>
+<div>Kind: penetration</div>
+<div>Metadata:</div>
+<div>Name : test-entry</div>
+<div>annotations:</div>
+<div>nginx.ingress.kubernetes.io/rewrite-target: /</div>
+<div>imagination:</div>
+<div>rules:</div>
+<div>- HTTP:</div>
+<div>Do ways:</div>
+<div>Do  do  - path: / test path</div>
+<div class="class_s1HS">backends:</div>
+<div>Do Do Do Do Sewanam: Trial</div>
+<div class="class_s1HV">service part: service</div>
+<div>As with all other Kubernetes resources, a migration aspires to the ep version, kind, and metadata fields. For comprehensive statistics about working with config files, see Deploying Applications, Configuring Containers, Managing Resources. Ingrade regularly uses <span id="page_105"></span>
+ annotations to configure some options based on the Ingrate controller, an example of which is a rewrite-target annotation. Different grade controllers assist different annotations. Review the Inner Controller's documentation of your wish to analyze the annotations that are supported.</div>
+<div class="class_s2V">The Ingress spec has all the data required to configure a load balancer or proxy server. Most importantly, it contains a list of policies matched against all incoming requests. Ingrade useful resources only help rules to direct HTTP traffic.</div>
+<div class="class_s2Y">Lawless law</div>
+<div class="class_s46">Each HTTP rule contains the following information:</div>
+<div class="class_s2V">An alternate host. In this example, no host is specified, so the rule applies to all inbound HTTP visitors via the specified IP address. If a host is equipped (for example, foo.bar.com), the guidelines make that host practice.</div>
+<div>A list of paths (for example, / test path), each of which has a corresponding backend, described with a team and service details. Both the host and the path should direct visitors to the referenced service to match the content of the first incoming request compared to the load balancer.</div>
+<div>A backend is a mixture of service and port names as described in Service Doctor. HTTP (and HTTPS) requests for an ingrate that suits the host and route of the rule, sent to the listed backend.</div>
+<div>A default backend is often configured in the Ingrate Controller to serve any request that no longer matches a path in the spec.</div>
+<div class="class_s2Y">Default backend</div>
+<div>An invoice sends all traffic to a single default backend without any direction. The default backend is usually a configuration option for the Ingrate Controller and is no longer detailed in your Ingrate resources.</div>
+<div class="class_s2V">If none of the hosts or paths shape the HTTP request in the ingrate objects, the site visitors are routed to your default backend.</div>
+<div class="class_s2Y">Ingrid's Type</div>
+<div id="page_106" class="class_s46">Single service engine</div>
+<div>There are current Kubernetes standards that allow you to highlight a single service (see Options). You can also do this with Ingrate by specifying the default backend without rules.</div>
+<div class="class_s2V">Copy service / nerking / ingress.yaml to service / nerking / ingress.yaml copyboard</div>
+<div class="class_s46">apiVersion: nerking.k8s.io/v1beta1</div>
+<div class="class_s46">Kind: penetration</div>
+<div class="class_s46">Metadata:</div>
+<div class="class_s46">Name : test-entry</div>
+<div class="class_s46">imagination:</div>
+<div class="class_s46">backends:</div>
+<div class="class_s46">service names: testvc</div>
+<div class="class_s1JK">serviceports: 80</div>
+<div class="class_s2V">If you make it using the overview, you will be able to see the country of the ingredients you have added:</div>
+<div class="class_s2Y">get l ingestion test-ingest</div>
+<div>NAME   HOSTS ADDRESS       PORTS AGE</div>
+<div>Test-ingress *   107.178.254.228 80       59</div>
+<div>Where 107.178.254.228 is the IP allocated by the Ingress controller to complete this Ingress.</div>
+<div class="class_s2V">Note: It may take a minute or allocate an IP address to the ING controllers and load balancers. Until that time, you often see listed as dealing with.</div>
+<div>Ordinary fan</div>
+<div>A fan configuration routes site visitors to more than one service from a single IP address based on the HTTP URI being requested. A grade allows you to keep the number of load balancers to a minimum. For example, a setup such as:</div>
+<div class="class_s2V">foo.bar.com -&gt; 178.91.123.132 -&gt; / foo service 1: 4200</div>
+<div class="class_s1JY">/ times service 2:  </div>
+<div class="class_s2Y">Tools</div>
+<div>You can secure a secret by specifying a secret that contains TLS <span id="page_107"></span>
+ private keys and certificates. Currently, Ingred only helps one TLS port 443 and considers TLS termination. If part of the TLS configuration in an Ingrate specifies different hosts, they are multiplexed on an equal port according to the hostname unique through the SNI TLS extension (provided the Ingress controller supports SNI). The TLS secret must contain keys named tls.crt and tls.key, including certificates and non-public keys, to be used for TLS. for example:</div>
+<ul class="class_s6P">
+<li class="class_sBF">EP Version: v1</li>
+<li class="class_sBF">Kind: Secret</li>
+<li class="class_sBF">Metadata:</li>
+<li class="class_sBF">names: secret-this</li>
+<li class="class_sBF">Namespace: Default</li>
+<li class="class_sBF">Data:</li>
+<li class="class_sBF">tls.crt: base64 encoded certificate</li>
+<li class="class_sBF">tls.key: base64 encoded key</li>
+<li class="class_sBF">Type: kubernetes.io/tls</li>
+</ul>
+<div class="class_s2Y">Load balancing</div>
+<div>An ingrate controller is bootstrapped with some load balancing coverage settings that apply to all upgrades, such as load balancing algorithms, backend weight schemes, and others. More advanced load balancing considerations (such as power sessions, dynamic weight) are not exposed through grade. You can achieve these points through a load balancer used for a service.</div>
+<div class="class_s2V">It is also well worth noting that even though fitness checks are no longer exposed without delay in grades, there are parallel views present in Kubernetes such as readiness checks that enable you to achieve similar end results. Please refer to the controller specific documentation on how they handle fitness assessment (Nginx, GCE).</div>
+<div class="class_s2Y">Update an update</div>
+<div>To update a current upgrade to add a new host, you can update it by increasing the resource:</div>
+<div class="class_s2V">Name:        test</div>
+<div>Namespace:  default</div>
+<div id="page_108">Address:      178.91.123.132</div>
+<div>Default backend: default-HTTP-backend: 80 (10.8.2.3:8080)</div>
+<div>Rule:</div>
+<div>hosts     paths backends</div>
+<div>----         ----  --------</div>
+<div>foo.bar.com</div>
+<div class="class_s1KT">/ fu service 1:  (10 ... 0. 90:) 0)</div>
+<div>Annotation</div>
+<div>nginx.ingress.kubernetes.io/rewrite-target:  /</div>
+<div>planning:</div>
+<div>Type reason age                      messages</div>
+<div>----   ------ ----       ----          -------</div>
+<div class="class_s1M0">common ADD  35s       load balancer-controller default / test</div>
+<div class="class_s46">edit Kubernetes ingress test</div>
+<div>It pops up an editor with an existing configuration in YAML format. Modify it to include the new host:</div>
+<div class="class_s2V">imagination:</div>
+<div>Rule:</div>
+<div>- host: foo.bar.com</div>
+<div>http:</div>
+<div class="class_s1M8">ways:</div>
+<div>Do   - backend:</div>
+<div class="class_s1MB">names: Service 1</div>
+<div class="class_s1HV">servicepart: service</div>
+<div class="class_s1HS">paths: / fu</div>
+<div>- host: bar.baz.com</div>
+<div>http:</div>
+<div class="class_s1M8">ways:</div>
+<div>Do - backend:</div>
+<div>Do   do seaman: service 2</div>
+<div class="class_s1M0">service ports: 80</div>
+<div>Do do  ways: / fu</div>
+<div>..</div>
+<div>After you've stored your changes, the API updates the help in the server, which tells the Ingress controller to reconfigure the load balancer.</div>
+<div class="class_s2Y">Failure in availability areas</div>
+<div id="page_109">The technique of spreading visitors during failed domains varies among cloud providers. Please test the documentation of the applicable Inner Controller for details. You can additionally refer to the federation for details of deployment in a federated cluster.</div>
+<div class="class_s2Y">Future work</div>
+<div>Track the SIG neck for more key points on the development of ingress and associated resources. You can add music to the Ingred repository for more important points on the development of a number of developers.</div>
+<div class="class_s2Y">Alternative</div>
+<div>You can expose a service to a resource without delay, without delay:</div>
+<ul class="class_s6P">
+<li class="class_sBF">Use Service.Type = LoadBalancer</li>
+<li class="class_sBF">Use Service.Type = NodePort</li>
+</ul>
+<div class="class_s2V">Kubernetes ingress is a series of routing policies that describe how external customers get the right of entry on the offerings offered in the Kubernetes cluster. However, in the deployment of Kubernetes in the real world, there are additional issues beyond the path to regular additional management. We will discuss these requirements in the additional element below.</div>
+<div class="class_s46">Enter Kubernetes</div>
+<div>In Kubernetes, there are three accepted techniques to highlight your application.</div>
+<div>Using a type of NodePort's Kubernetes service that exposes software on the port in each of your nodes</div>
+<div>Use a type of load banners Kubernetes carrier, which creates an external load balancer that points to the Kubernetes service in your cluster.</div>
+<div>Use a Kubernetes Ingress resource</div>
+<div>Node Port</div>
+<div>Node Port is an open port on each node of your cluster. Kubernetes takes incoming site visitors to Node Port to serve you in a transparent manner, even if your application is jogging on a particular node.</div>
+<div>Each Kubernetes cluster supports Node Port, even if you are going to run in a cloud issuer like Google Cloud, you may additionally have <span id="page_110"></span>
+ to edit your firewall rules. However, a Node Port is assigned from a pool of cluster-configured Node Port levels (typically 30000–32767). While this is in all likelihood, not a problem for most TCP or UDP clients, HTTP or HTTPS prevents visitors from being exposed to a non-standard port.</div>
+<div>Node Port abstraction is meant to be the building block for high-level ingress models (e.g., balancer balance). It is available for development purposes, however, when you do not want a production URL.</div>
+<div>Load balancing</div>
+<div>Using a Load Balancer provider type automatically denotes an external load balancer. This external load balancer relates to a unique IP address and routes external traffic to the Kubernetes service in your cluster.</div>
+<div>The specific implementation of the Load Balancer is based on your cloud provider, and now not all cloud providers guide the Load Balancer service type. In addition, if you deploy Kubernetes on naked metal, you must apply your load balancer. He said, if you're in an environment that helps a loud boiler provider, it's probably the safest, easiest way to route your traffic.</div>
+<div>Ingress Controllers and Ingress Resources</div>
+<div>Kubernetes supports a high-level abstraction, referred to as Ingress, that allows a simple host or URL-based HTTP routing. One entry is basic thinking (in beta) of Kubernetes, although consistently implemented using a 0.33 birthday celebration proxy. These implementations are identified as ingress controllers. Ingres resource An Ingress controller is responsible for analyzing the facts and processing that data accordingly. Various access controllers have extended the specification to exceptional approaches to support additional use cases.</div>
+<div>The migration is tightly integrated into Kubernetes, meaning that your existing workflows round Kubeckel will likely be longer to manage to ingest. Note that an ingress controller usually does not dispose of the need for an external load balancer - the ingress controller certainly adds an extra layer of routing and manipulation behind the load balancer.</div>
+<div>Real-world penetration</div>
+<div>We have protected just three simple patterns for routing external visitors to your Kubernetes cluster. However, we only mentioned <span id="page_111"></span>
+ routing traffic to your cluster. Typically, however, your Kubernetes services will impose additional requirements on your entry. Examples of this include:</div>
+<div>Content-based routing, e.g., routing, header, or individual request-specific home based entirely on the HTTP method</div>
+<div>Flexibility, eg, limit fees, time off</div>
+<div>Support for a couple of protocols, e.g., WebSockets or gRPC</div>
+<div>Authentication</div>
+<div>Unless you're moving a very easy cloud application, you'll likely need support for some or all of these capabilities. And, significantly, many of these requirements may need to be managed at the service level, which means that you choose to manipulate these concerns inside Kubernetes.</div>
+<div>Start with a load balancer</div>
+<div>Regardless of your ingestion strategy, you will need to start with an external load balancer. This load balancer will then route visitors on your cluster to a Kubernetes provider (or ingress) that will conduct service-specific routing. In this setup, your load balancer uses a static endpoint (IP address) for external site visitors.</div>
+<div>Both controllers and Kubernetes services require an external load balancer, and, as in the previous discussion, NodePorts are not designed to be used once for production.</div>
+<div class="class_s2Y">Service-specific admissions management</div>
+<div>So the query for your ingestion approach is really about choosing the right way to control visitors to your services from your external load balancer. What are your options?</div>
+<div>You can choose an ingress controller like ingress-Nagenex or NGINX Kubernetes-ingress</div>
+<div>You can choose API Gateway deployed as Kubernetes providers such as Ambassador (built on Envoy) or Benefic.</div>
+<div>You can set up your personal using custom configurations of NGINX, HAProxy, or Envoy.</div>
+<div>How can you choose between an access controller and an API gateway, assuming you don't want to do your own setup? It comes down to actual capabilities.</div>
+<div>So how do you choose between an API Gateway deployed as a Kuber controller and a Kubernetes service? Surprisingly, there are no significant differences!</div>
+<div id="page_112">The basic motivation behind ingestion was to create a fashionable API for cluster services to manipulate to route external traffic. However, the reality is that a portable standard does not actually enter. Preferred is impermeable (there is a kind of semantics in various Ingredient controllers, for example, the trailing conduct/standard is not specific). The Ingress standard has additionally focused on the least frequent running functionality, so many impression controllers have enhanced insert assistance with custom annotations, developing additional fragmentation.</div>
+<div>After some energetic dialogue at Kubernetes Nerk SIG, there was an awareness that penetration (despite its beta tag) had emerged as a de-facto standard. Thus, the selection was made in January 2019 to enter a permanent API crew (Nerking. V1beta1), which facilitates easy API ups to resolve some ambiguities in the feature and a clean API. The GA is put together to clean. More important points of this justification can be discovered in this KEP. KEP notes some challenges to make one routine fashionable during more than one implementation.</div>
+<div>Therefore, at the end of the day, your preference for service-specific management depends on your particular needs and the ability of a particular implementation to meet your needs.</div>
+<div class="class_s2V">Like API Gateway,  different Ingress controllers will have exceptional functionality. Here are some options to consider:</div>
+<div>There are three exceptional NGINX ingress controllers, with exceptional feature sets and functionality.</div>
+<div>Traffic can also be deployed as an entry controller and exposes a subset of its performance via <span class="class_s1R2">Kubernetes annotations.</span>
+</div>
+<div>Kong is a popular open-source API gateway built on NGINX. However, due to the fact that it helps multiple infrastructure platforms, it is not optimized for Kubernetes. For example, Kong needs a database when Kubernetes presents an amazing continuous facts store in Ordered. Kong is also configured using REST, while Kubernetes accepts declarative configuration management.</div>
+<div class="class_s1P9">Ambassador is built on the Envoy proxy and exposes a rich set of configuration options for your services as an aid to external authentication services.</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<HR>
+<P><FONT SIZE="-1">
+Copyright 1999Ð2000 by My Company, Inc.<BR>
+Please report any problems to
+  <A HREF="mailto:<!--#echo var="SERVER_ADMIN"-->">
+  <!--#echo var="SERVER_ADMIN"--></A>.<BR>
+This document was last modified on <!--#echo var="LAST_MODIFIED"-->.<BR>
+</FONT></P>

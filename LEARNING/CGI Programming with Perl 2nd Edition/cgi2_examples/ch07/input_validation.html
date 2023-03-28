@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <title>User Registration</title>
+    <script src="/js-lib/formLib.js"></script>
+    <script><!--
+      function validateForm ( form ) {
+          
+          requiredText = new Array( "name", "address", "city", "zip",
+                                    "home_phone", "work_phone", "age",
+                                    "social_security", "maiden_name" );
+          
+          requiredSelect = new Array( "state", "education" );
+          requiredRadio  = new Array( "gender" );
+          
+          return requireValues ( form, requiredText   ) &&
+                 requireSelects( form, requiredSelect ) &&
+                 requireRadios ( form, requiredRadio  ) &&
+                 checkProblems ();
+      }
+    // -->
+    </script>
+  </head>
+  
+  <body bgcolor="#ffffff">
+    
+    <h2>User Registration Form</h2>
+    
+    <p>Hi, in order for you to access our site, we'd like first to get as
+      much personal information as we can from you in order to sell to other
+      companies. You don't mind, do you? Great! Then please fill this out as
+      accurately as possible.</p>
+    
+    <p>Note this form is for U.S. residents only. Others should use the
+      <a href="intl_registration.html">International Registration
+      Form</a>.</p>
+    
+    <hr>
+    
+    <form method="POST" action="/cgi/register.cgi"
+      onSubmit="return checkValues( this, requiredText ) && checkMenus">
+    <form method="GET" onSubmit="return validateForm( this );">
+      <table border=0>
+        <tr><td>
+            Name:
+          </td><td>
+            <input type="text" name="name" size="30" maxlength="30">
+          </td></tr>
+        <tr><td>
+            Address:
+          </td><td>
+            <input type="text" name="address" size="40" maxlength="50">
+          </td></tr>
+        <tr><td>
+            City:
+          </td><td>
+            <input type="text" name="city" size="20" maxlength="20">
+          </td></tr>
+        <tr><td>
+            State:
+          </td><td>
+            <select name="state" size="1">
+              <option value="">Please Choose a State</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+                  .
+                  .
+                  .
+              <option value="WY">Wyoming</option>
+            </select>
+          </td></tr>
+        <tr><td>
+            Zip Code:
+          </td><td>
+            <input type="text" name="zip" size="5" maxlength="5"
+                onChange="checkZip( this );">
+          </td></tr>
+        <tr><td>
+            Home Phone Number:
+          </td><td>
+            <input type="text" name="home_phone" size="12" maxlength="12"
+              onChange="checkPhone( this );">
+            <i>(please use this format: 800-555-1212)</i>
+          </td></tr>
+        <tr><td>
+            Work Phone Number:
+          </td><td>
+            <input type="text" name="work_phone" size="12" maxlength="12"
+              onChange="checkPhone( this );">
+            <i>(please use this format: 800-555-1212)</i>
+          </td></tr>
+        <tr><td>
+            Social Security Number (US residents only):
+          </td><td>
+            <input type="text" name="social_security" size="11" maxlength="11"
+              onChange="checkSSN( this );">
+            <i>(please use this format: 123-45-6789)</i>
+          </td></tr>
+        <tr><td>
+            Mother's Maiden Name:
+          </td><td>
+            <input type="text" name="maiden_name" size="20" maxlength="20">
+          </td></tr>
+        <tr><td>
+            Age:
+          </td><td>
+            <input type="text" name="age" size="3" maxlength="3"
+              onChange="checkAge( this );">
+          </td></tr>
+        <tr><td>
+            Gender:
+          </td><td>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+          </td></tr>
+        <tr><td>
+            Highest Education:
+          </td><td>
+            <select name="education" size="1">
+              <option value="">Please Choose a Category</option>
+              <option value="grade">Grade School</option>
+              <option value="high">High School Graduate (or GED)</option>
+              <option value="college">Some College</option>
+              <option value="junior">Technical or Junior College Degree</option>
+              <option value="bachelors">Four Year College Degree</option>
+              <option value="graduate">Post Graduate Degree</option>
+            </select>
+          </td></tr>
+        <tr>
+          <td colspan=2 align=right>
+            <input type="submit">
+          </td></tr>
+      </table>
+    </form>
+    
+  </body>
+</html>

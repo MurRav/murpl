@@ -1,0 +1,19 @@
+## This is your email address
+EMAIL_ADDRESS=change_this!@invalid_domain_name.com
+
+## Uncomment and edit this line if sendmail isn't at /usr/lib/sendmail
+#SENDMAIL=/path/to/sendmail
+
+## If we get a message, verify that it wasn't sent by a mail daemon
+## or isn't one of our marked messages. If not, then reply to it using
+## the contents of the autoreply.txt file as the body of the message
+## and mark the message by adding an X-Loop header.
+:0 h
+* !^FROM_DAEMON
+* !^X-Loop: $EMAIL_ADDRESS
+| ( formail -r -A"X-Loop: $EMAIL_ADDRESS"; \
+    cat "$HOME/autoreply.txt"            ) | $SENDMAIL -t
+
+## Throw away the messages we're not replying to
+:0
+/dev/null

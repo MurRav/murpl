@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+   <head>
+      <meta name="dtb:uid" content="bookid"/>
+      <meta name="dtb:depth" content="0"/>
+      <meta name="dtb:totalPageCount" content="0"/>
+      <meta name="dtb:maxPageNumber" content="0"/>
+   </head>
+   <docTitle>
+      <text>UnKnown</text>
+   </docTitle>
+   <navMap>
+     <navPoint id="id1" playOrder="1">
+       <navLabel>
+         <text>Nodes</text>
+       </navLabel>
+       <content src="text00005.html#a1PE"/>
+     </navPoint>
+     <navPoint id="id2" playOrder="2">
+       <navLabel>
+         <text>The Cluster</text>
+       </navLabel>
+       <content src="text00005.html#page_11"/>
+     </navPoint>
+     <navPoint id="id3" playOrder="3">
+       <navLabel>
+         <text>Persistent Volumes</text>
+       </navLabel>
+       <content src="text00005.html#page_14"/>
+     <navPoint id="id4" playOrder="4">
+       <navLabel>
+         <text>Persistent Volume Claim requesting a Raw Block Volume</text>
+       </navLabel>
+       <content src="text00007.html#a1PH"/>
+     </navPoint>
+     <navPoint id="id5" playOrder="5">
+       <navLabel>
+         <text>Pod specification adding Raw Block Device path in container</text>
+       </navLabel>
+       <content src="text00007.html#a1PJ"/>
+     </navPoint>
+     </navPoint>
+     <navPoint id="id6" playOrder="6">
+       <navLabel>
+         <text>Containers</text>
+       </navLabel>
+       <content src="text00005.html#page_18"/>
+     </navPoint>
+     <navPoint id="id7" playOrder="7">
+       <navLabel>
+         <text>Pods</text>
+       </navLabel>
+       <content src="text00005.html#page_21"/>
+     </navPoint>
+     <navPoint id="id8" playOrder="8">
+       <navLabel>
+         <text>Deployments</text>
+       </navLabel>
+       <content src="text00005.html#page_24"/>
+     </navPoint>
+     <navPoint id="id9" playOrder="9">
+       <navLabel>
+         <text>Ingress</text>
+       </navLabel>
+       <content src="text00006.html"/>
+     </navPoint>
+   </navMap>
+</ncx>
